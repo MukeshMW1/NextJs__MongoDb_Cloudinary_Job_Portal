@@ -16,7 +16,7 @@ const Job = ({job}) => {
       setFav(updateFav);
     
       try {
-        await fetch(`https://next-js-mongo-db-job-portal.vercel.app/api/jobs/${id}`, {
+        await fetch(`http://localhost:3000/api/jobs/${id}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
