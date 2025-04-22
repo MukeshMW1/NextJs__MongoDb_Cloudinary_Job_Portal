@@ -28,7 +28,7 @@ const Form = ({ id }) => {
     data.append('file', file.info.secure_url) // use directly from file state
 
     try {
-      const response = await fetch('http://localhost:3000/api/applications', {
+      const response = await fetch('https://next-js-mongo-db-job-portal.vercel.app/api/applications', {
         method: 'POST',
         body: data,
       })

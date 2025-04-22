@@ -15,15 +15,19 @@ const jobsperPage = 3;
 
 
 useEffect( ()=>{
-  const fetchJobs =async () =>{
-
-
-    const res= await fetch('http://localhost:3000/api/jobs');
-    const data = await res.json();
-    console.log(data.jobs);
-    setJobs(data.jobs);
-  }
-  fetchJobs();
+  const fetchJobs = async () => {
+    try {
+      const res = await fetch('https://next-js-mongo-db-job-portal.vercel.app/api/jobs');
+      if (!res.ok) {
+        throw new Error(`Error fetching jobs: ${res.statusText}`);
+      }
+      const data = await res.json();
+      console.log(data.jobs);
+      setJobs(data.jobs);
+    } catch (error) {
+      console.error('Error fetching jobs:', error);
+    }
+  };
 },[])
 
 
