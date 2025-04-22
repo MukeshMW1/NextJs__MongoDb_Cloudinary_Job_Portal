@@ -36,7 +36,7 @@ const handleSubmit = async (e) =>{
 
   try{
 
-    const response = await fetch('http://localhost:3000/api/applications',{
+    const response = await fetch('https://next-js-mongo-db-job-portal.vercel.app/api/applications',{
       method:'POST',
       body:data
     })

@@ -13,7 +13,7 @@ useEffect( ()=>{
 
   const fetchJob =async () =>{
 
-    const res= await fetch(`http://localhost:3000/api/jobs/${id}`);
+    const res= await fetch(`https://next-js-mongo-db-job-portal.vercel.app/api/jobs/${id}`);
     const data = await res.json();
     console.log(data.jobs);
     setJob(data.job);
