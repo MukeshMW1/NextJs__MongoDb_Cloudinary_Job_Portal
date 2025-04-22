@@ -1,6 +1,5 @@
-// next.config.js
 
-module.exports = {
+export default {
     async headers() {
       return [
         {
