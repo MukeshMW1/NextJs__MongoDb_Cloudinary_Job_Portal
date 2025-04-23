@@ -21,15 +21,12 @@ export default function Favorites() {
     fetchJobs();
   }, []);
 
-  // 1️⃣ Filter favorite jobs
   const favoriteJobs = jobs.filter((job) => job.favorite);
 
-  // 2️⃣ Pagination logic based on favorites
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = favoriteJobs.slice(indexOfFirstJob, indexOfLastJob);
 
-  // 3️⃣ Navigation
   const handleNext = () => {
     if (indexOfLastJob < favoriteJobs.length) {
       setCurrentPage((prev) => prev + 1);
@@ -43,7 +40,7 @@ export default function Favorites() {
   };
 
   return (
-    <div className="px-4">
+    <div className=" md:px-4 ">
       {currentJobs.length > 0 ? (
         currentJobs.map((job) => (
           <Job key={job._id} job={job} />
