@@ -47,7 +47,7 @@ export default function Favorites() {
         ))
       ) : (
         <p className="text-center text-gray-500 font-semibold my-10">
-          No favorite jobs found.
+          No favorite jobs found
         </p>
       )}
 
